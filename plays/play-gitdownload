@@ -1,0 +1,28 @@
+---
+  - name: "Just ensuring the repo checkout exists"
+    hosts: localhost
+    tasks:
+      - ansible.builtin.git: 
+          dest: /home/ubuntu/test-ansible/repo/www
+          repo: "https://github.com/psfletcher/Web-Setup.git"
+          clone: true
+          update: true
+        register: data
+      - debug:
+          msg: "{{ data }}"
+
+  - name: "Delete"
+    hosts: example
+    tasks:
+    - name: Delete files
+      file:
+        path: /var/www/html/www/
+        state: absent
+
+  - name: "Copy Control to Remote"
+    hosts: example
+    tasks:
+    - name: Copying the Directory's contents (sub directories/files)
+      copy:
+        src: /home/ubuntu/test-ansible/repo/www/
+        dest: /var/www/html/www

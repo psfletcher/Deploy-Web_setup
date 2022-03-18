@@ -1,0 +1,23 @@
+---
+- hosts: example
+  roles:
+    - role: psfletch.filebeat.dev
+      filebeat_output_elasticsearch_enabled: true
+      filebeat_output_elasticsearch_hosts:
+      - "192.168.99.23:9200"
+      #- "192.168.99.23:9200"
+      #- "192.168.99.23:9200"
+      filebeat_output_elasticsearch_protocol: "https"
+      filebeat_output_elasticsearch_username: "elastic"
+      filebeat_output_elasticsearch_password: "GwF1409!"
+      filebeat_output_elasticsearch_enabled_ssl: true
+      filebeat_template_numberofshards: "1"
+      filebeat_template_numberofreplica: "1"
+      filebeat_template_codec: "best_compression"
+      filebeat_install: true
+      metricbeat_install: true
+      auditbeat_install: true
+      packetbeat_install: true
+      heartbeat_install: false
+
+
