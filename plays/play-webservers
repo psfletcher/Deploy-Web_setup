@@ -1,6 +1,0 @@
----
-- hosts: webservers
-  roles:
-    - role: geerlingguy.apache
-      apache_listen_port: 80
-    - role: geerlingguy.php

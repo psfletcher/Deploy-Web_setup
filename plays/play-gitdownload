@@ -25,4 +25,4 @@
     - name: Copying the Directory's contents (sub directories/files)
       copy:
         src: /home/jenkins/artifacts/repo/www/
-        dest: /var/www/html/www
+        dest: /var/www/html/
