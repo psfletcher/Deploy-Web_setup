@@ -12,7 +12,7 @@
           msg: "{{ data }}"
 
   - name: "Delete"
-    hosts: example
+    hosts: webservers
     tasks:
     - name: Delete files
       file:
@@ -20,7 +20,7 @@
         state: absent
 
   - name: "Copy Control to Remote"
-    hosts: example
+    hosts: webservers
     tasks:
     - name: Copying the Directory's contents (sub directories/files)
       copy:
