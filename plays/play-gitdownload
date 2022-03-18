@@ -3,7 +3,7 @@
     hosts: localhost
     tasks:
       - ansible.builtin.git: 
-          dest: /home/ubuntu/test-ansible/repo/www
+          dest: /home/jenkins/artifacts/repo/www
           repo: "https://github.com/psfletcher/Web-Setup.git"
           clone: true
           update: true
