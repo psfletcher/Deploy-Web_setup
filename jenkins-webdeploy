@@ -4,11 +4,7 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
-        sh '''
-          ansible --version
-          ansible-playbook --version
-          ansible-galaxy --version
-        '''
+        sh 'ansible-playbook  plays/play-gitdownload'
       }
     }
   }
